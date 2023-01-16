@@ -1,7 +1,12 @@
-import css from './App.module.css'
+import css from './App.module.css';
+import Home from 'pages/Home';
 
 const App = () => {
-	return <div></div>;	
-}
+  return (
+    <div className={css.container}>
+      <Home />
+    </div>
+  );
+};
 
 export default App;

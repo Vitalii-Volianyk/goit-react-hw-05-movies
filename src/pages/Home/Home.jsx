@@ -1,7 +1,8 @@
-import css from './Home.module.css'
-
+import css from './Home.module.css';
+import API from 'services/api';
 const Home = () => {
-	return <div></div>;	
-}
+  API.getTrending().then(res => console.log(res.json()));
+  return <div></div>;
+};
 
 export default Home;
