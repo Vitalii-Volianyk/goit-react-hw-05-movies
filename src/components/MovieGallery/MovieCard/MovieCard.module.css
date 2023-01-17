@@ -24,3 +24,6 @@
 .container:hover .title {
   transform: translateY(0);
 }
+.link {
+  display: block;
+}
