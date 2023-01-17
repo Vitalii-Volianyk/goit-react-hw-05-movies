@@ -7,7 +7,8 @@ const Home = () => {
   useEffect(() => {
     API.getTrending()
       .then(res => res.json())
-      .then(res => setItems(res.results));
+      .then(res => setItems(res.results))
+      .catch(error => setItems(''));
   }, []);
 
   return (

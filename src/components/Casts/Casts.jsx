@@ -32,8 +32,8 @@ const Casts = () => {
                 alt={name}
               />
             )}
-            <p>{character}</p>
             <p>{name}</p>
+            <p>{character}</p>
           </li>
         ))}
       </ul>
