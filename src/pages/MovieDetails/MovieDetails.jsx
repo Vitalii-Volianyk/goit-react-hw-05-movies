@@ -32,27 +32,48 @@ const MovieDetails = () => {
   const year = release_date.split('-')[0];
   return (
     <>
-      <NavLink to={backLinkHref}>Back to movies</NavLink>
+      <NavLink className={css.link} to={backLinkHref}>
+        Back to movies
+      </NavLink>
       <div className={css.container}>
-        <img src={'https://image.tmdb.org/t/p/w500' + img} alt={title} />
-        <div>
-          <h1>{`${title}(${year})`}</h1>
-          <p>{`User score ${Math.round(popularity)}%`}</p>
-          <p>
-            <b>Overview</b> {overview}
-          </p>
-          <p>
-            <b>Genres</b> {genres.map(genre => genre.name).join(' ')}
-          </p>
+        <img
+          className={css.poster}
+          src={'https://image.tmdb.org/t/p/w500' + img}
+          alt={title}
+        />
+        <div className={css.details}>
+          <h1 className={css.title}>{`${title}(${year})`}</h1>
+          <p>{`User score ${Math.round(popularity)}`}</p>
+          <b>Overview</b>
+          <p>{overview}</p>
+          <b>Genres</b>
+          <p>{genres.map(genre => genre.name).join(' ')}</p>
         </div>
       </div>
-      <p>Addition information</p>
-      <ul>
+
+      <ul className={css.options}>
         <li>
-          <NavLink to="cast">Cast</NavLink>
+          <p className={css.advance}>Addition information</p>
         </li>
         <li>
-          <NavLink to="reviews">Reviews</NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? css.link + ' ' + css.active : css.link
+            }
+            to="cast"
+          >
+            Cast
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? css.link + ' ' + css.active : css.link
+            }
+            to="reviews"
+          >
+            Reviews
+          </NavLink>
         </li>
       </ul>
       <Outlet />

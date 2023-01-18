@@ -17,15 +17,19 @@ const Reviews = () => {
     return;
   }
   if (items.length === 0) {
-    return <div>We don`t have any reviews for this movie</div>;
+    return (
+      <div className={css.notfound}>
+        We don`t have any reviews for this movie
+      </div>
+    );
   }
 
   return (
     <>
-      <ul>
-        {items.map(({ author, content }) => (
-          <li key={author}>
-            <p>{author}</p>
+      <ul className={css.container}>
+        {items.map(({ author, content }, idx) => (
+          <li className={css.item} key={idx}>
+            <p className={css.name}>{author}</p>
             <p>{content}</p>
           </li>
         ))}
