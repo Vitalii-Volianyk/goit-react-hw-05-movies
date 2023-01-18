@@ -18,8 +18,20 @@
 .container {
   cursor: pointer;
   position: relative;
-  max-width: calc(100vw / 4 - 13px);
+  height: auto;
+  aspect-ratio: 16 / 9;
+  width: calc(100vw / 4 - 13px);
   overflow: hidden;
+}
+@media screen and (max-width: 1199px) {
+  .container {
+    width: calc(100vw / 3 - 14px);
+  }
+}
+@media screen and (max-width: 799px) {
+  .container {
+    width: calc(100vw / 2 - 15px);
+  }
 }
 .container:hover .title {
   transform: translateY(0);

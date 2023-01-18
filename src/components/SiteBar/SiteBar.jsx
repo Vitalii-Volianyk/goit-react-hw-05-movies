@@ -5,9 +5,23 @@ import { Suspense } from 'react';
 const SiteBar = () => {
   return (
     <div>
-      <nav>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/movies">Movies</NavLink>
+      <nav className={css.container}>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? css.link + ' ' + css.active : css.link
+          }
+          to="/"
+        >
+          Home
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? css.link + ' ' + css.active : css.link
+          }
+          to="/movies"
+        >
+          Movies
+        </NavLink>
       </nav>
       <Suspense>
         <Outlet />

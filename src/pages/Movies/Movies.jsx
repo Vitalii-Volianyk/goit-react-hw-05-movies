@@ -39,9 +39,14 @@ const Movies = () => {
   }, [searchParams]);
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input value={query} onChange={handleInput} type="text" />
-        <button>Search</button>
+      <form className={css.form} onSubmit={handleSubmit}>
+        <input
+          className={css.input}
+          value={query}
+          onChange={handleInput}
+          type="text"
+        />
+        <button className={css.button}>Search</button>
       </form>
       <MovieGallery items={items ? items : []} />
     </div>

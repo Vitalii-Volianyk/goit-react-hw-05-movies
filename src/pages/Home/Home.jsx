@@ -13,7 +13,7 @@ const Home = () => {
 
   return (
     <>
-      <h1>Trending today</h1>
+      <h1 className={css.title}>Trending today</h1>
       <MovieGallery items={items ? items : []} />
     </>
   );
